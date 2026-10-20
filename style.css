@@ -1,0 +1,46 @@
+body {
+    background: grey;
+    font-family: sans-serif;
+}
+.container{
+    width: 900px;
+    margin: 50px auto;
+    padding: 30px 100px;
+    background-color: #8f8f8f;
+}
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+.card p {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.b{
+    padding: 12px 22px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    
+}
+
+.green{
+    background-color: green;
+}
+.green:hover{
+    background-color: antiquewhite;
+}
+.yellow{
+    background-color: yellow;
+}
+.purple{
+    background-color: purple;
+}
