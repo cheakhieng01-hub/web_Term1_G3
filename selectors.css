@@ -1,0 +1,116 @@
+
+/* Give the body a background */
+body {
+    background: #bdc3c7;
+}
+
+/* Make h1 purple */
+h1 {
+    color: #9b59b6;
+}
+
+/* Make h2 orange */
+h2 {
+    color: orange;
+}
+
+/* Make all li elements blue */
+li {
+    color: blue;
+}
+
+/* Give all paragraphs a yellow background */
+p {
+    background: yellow;
+}
+
+/* Make all inputs have a 3px red border */
+input {
+    border: 3px solid red;
+}
+
+/* White background for class hello */
+.hello {
+    background: white;
+}
+
+/* Blue border for id special */
+#special {
+    border: 2px solid blue;
+}
+
+
+/* BONUS CHALLENGES */
+
+/* Paragraphs inside divs */
+div p {
+    font-size: 25px;
+}
+
+/* Text inputs have gray background */
+input[type="text"] {
+    background: gray;
+}
+
+/* Checked checkboxes have left margin */
+input[type="checkbox"]:checked {
+    margin-left: 50px;
+}
+
+/* Labels are uppercase */
+label {
+    text-transform: uppercase;
+}
+/* Checked checkbox moves right */
+input[type="checkbox"]:checked {
+    margin-left: 50px;
+}
+
+/* Label turns red when checkbox is checked */
+input[type="checkbox"]:checked + label {
+    color: red;
+    font-weight: bold;
+}
+
+/* Better spacing */
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Add hover effect */
+label:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+/* First letter of special */
+#special::first-letter {
+    color: green;
+    font-size: 100px;
+}
+
+/* Hover effect on h1 */
+h1:hover {
+    color: blue;
+}
+
+/* Checked checkboxes + labels */
+input[type="checkbox"]:checked + label {
+   color:  rgb(192, 23, 23);
+}
+
+/* Every second paragraph inside div */
+div p:nth-of-type(2) {
+    color: pink;
+}
+
+/* First letter of paragraphs */
+p::first-letter {
+    font-size: 30px;
+}
+
+/* Visited links become gray */
+a:visited {
+    color: gray;
+}
+
