@@ -1,0 +1,165 @@
+/* ===== 1. VARIABLES: change colors here and the whole site updates ===== */
+:root {
+  --green: #075B3C;
+  --light-green: #5DBB91;
+  --bg: #F4F5F4;
+  --card: #FFFFFF;
+  --text: #222222;
+  --muted: #8a8f8c;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== 2. RESET: remove default browser spacing ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; } /* border-box: padding stays inside the width */
+body { font-family: "Segoe UI", Arial, sans-serif; background: var(--bg); color: var(--text); }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+small { display: block; font-size: 11px; color: var(--muted); }
+.muted { color: var(--muted); font-size: 14px; }
+.green-text { color: var(--green); }
+
+/* ===== 3. PAGE LAYOUT (Flexbox): sidebar on the left, main on the right ===== */
+.app { display: flex; gap: 16px; padding: 16px; min-height: 100vh; }
+.sidebar { width: 240px; flex-shrink: 0; background: #fff; border-radius: 20px; padding: 24px 16px;
+  display: flex; flex-direction: column; box-shadow: var(--shadow); }
+.main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+
+/* ===== 4. SIDEBAR ===== */
+.brand { font-size: 20px; font-weight: 700; margin-bottom: 28px; }
+.logo { color: var(--green); font-size: 26px; }
+.menu-label { font-size: 12px; color: var(--muted); margin: 16px 0 8px 8px; }
+.nav a { display: flex; align-items: center; justify-content: space-between; padding: 11px 12px;
+  border-radius: 10px; color: var(--muted); font-size: 15px; margin-bottom: 2px; }
+.nav a.active { background: var(--green); color: #fff; }  /* active menu item */
+.nav a:hover:not(.active) { background: var(--bg); }
+.badge { background: var(--green); color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 6px; }
+.promo { margin-top: auto; background: linear-gradient(160deg, #0b7a50, #03261a); color: #fff;
+  border-radius: 16px; padding: 18px; }
+.promo h3 { font-size: 17px; font-weight: 500; }
+.promo p { font-size: 11px; opacity: .7; margin: 6px 0 14px; }
+
+/* ===== 5. BUTTONS ===== */
+.btn { display: inline-block; padding: 12px 24px; border-radius: 30px; font-size: 14px; font-weight: 500;
+  text-align: center; border: 1.5px solid var(--green); }
+.btn-green { background: var(--green); color: #fff; }
+.btn-outline { background: transparent; color: var(--green); }
+.btn-light { background: rgba(255,255,255,.15); color: #fff; border: none; display: block; }
+.btn-small { padding: 6px 14px; font-size: 12px; }
+.btn-block { display: block; padding: 16px; }
+
+/* ===== 6. TOP BAR ===== */
+.topbar { background: #fff; border-radius: 20px; padding: 12px 20px; display: flex;
+  justify-content: space-between; align-items: center; box-shadow: var(--shadow); gap: 12px; }
+.search { display: flex; align-items: center; gap: 8px; background: var(--bg); border-radius: 30px;
+  padding: 10px 18px; width: 300px; max-width: 100%; }
+.search input { border: none; background: transparent; outline: none; font-size: 14px; width: 100%; }
+.topbar-right { display: flex; align-items: center; gap: 12px; }
+.icon-circle { width: 40px; height: 40px; border-radius: 50%; background: var(--bg);
+  display: flex; align-items: center; justify-content: center; }
+.avatar { width: 42px; height: 42px; border-radius: 50%; background: #e9a7a7; font-size: 13px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; } /* circle = 50% radius */
+.user strong { font-size: 14px; }
+
+/* ===== 7. HEADER ===== */
+.page-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.page-header h1 { font-size: 34px; }
+.header-buttons { display: flex; gap: 10px; }
+
+/* ===== 8. CARDS ===== */
+.card { background: var(--card); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); }
+.card h3 { font-size: 16px; font-weight: 600; }
+.card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+
+/* Stat cards: 4 equal columns with Grid */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.number { font-size: 48px; font-weight: 600; margin: 8px 0; }
+.featured { background: linear-gradient(135deg, #1a8a5a, #075B3C); color: #fff; }
+.featured small { color: #c8f0dc; }
+
+/* ===== 9. MAIN GRID: 3 columns, cards placed with named areas ===== */
+.grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 16px;
+  grid-template-areas:
+    "analytics reminders projects"
+    "team progress tracker"; }
+.analytics { grid-area: analytics; }
+.reminders { grid-area: reminders; }
+.projects  { grid-area: projects; grid-row: 1 / 3; }  /* spans two rows */
+.team      { grid-area: team; }
+.progress-card { grid-area: progress; }
+.tracker   { grid-area: tracker; }
+
+/* Fix: projects spans 2 rows, so tracker moves under it */
+.grid { grid-template-areas:
+    "analytics reminders projects"
+    "team progress projects"
+    "team progress tracker"; }
+.projects { grid-row: auto; }
+
+/* ===== 10. BAR CHART (pure CSS) ===== */
+.chart { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; height: 170px; margin-top: 14px; }
+.bar-col { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+.bar { width: 100%; border-radius: 40px; }        /* height is set inline in the HTML */
+.bar-col span { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.b-dark { background: #0d4a32; }
+.b-mid { background: #1f8a5b; }
+.b-light { background: var(--light-green); }
+.b-stripe { background: repeating-linear-gradient(135deg, #cdd4d0 0 4px, #8f9b95 4px 6px); } /* diagonal stripes */
+
+/* ===== 11. REMINDERS ===== */
+.reminders h2 { font-size: 22px; font-weight: 500; color: var(--green); margin: 16px 0 6px; line-height: 1.2; }
+.reminders .muted { margin-bottom: 18px; }
+
+/* ===== 12. PROJECT LIST ===== */
+.project-list li { display: flex; align-items: center; gap: 12px; padding: 9px 0; font-size: 14px; }
+.p-icon { width: 30px; height: 30px; border-radius: 8px; color: #fff; display: flex;
+  align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+
+/* ===== 13. TEAM ===== */
+.team-list li { display: flex; align-items: center; gap: 12px; padding: 8px 0; font-size: 14px; }
+.team-list li div { flex: 1; min-width: 0; }
+.status { font-size: 11px; padding: 3px 10px; border-radius: 6px; border: 1px solid; }
+.done { color: #1a8a5a; background: #e8f6ee; }       /* Completed = green */
+.progress { color: #c98a00; background: #fff6dd; }    /* In Progress = yellow */
+.pending { color: #d03a3a; background: #fdeaea; }     /* Pending = red */
+
+/* ===== 14. CIRCULAR PROGRESS (conic-gradient) ===== */
+.progress-card { text-align: center; }
+.progress-card h3 { text-align: left; }
+.gauge { width: 180px; height: 180px; border-radius: 50%; margin: 18px auto; position: relative;
+  /* 0-41% green, 41-60% dark green, rest striped gray */
+  background: conic-gradient(var(--light-green) 0 41%, var(--green) 41% 60%, #cdd4d0 60% 100%); }
+.gauge-hole { position: absolute; inset: 22px; background: #fff; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.gauge-hole strong { font-size: 36px; }
+.legend { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; font-size: 12px; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; }
+.d-done { background: var(--light-green); }
+.d-progress { background: var(--green); }
+.d-pending { background: #cdd4d0; }
+
+/* ===== 15. TIME TRACKER ===== */
+.tracker { background: linear-gradient(135deg, #0b6b48, #03261a); color: #fff; text-align: center; }
+.time { font-size: 38px; font-weight: 500; margin: 14px 0; }
+.tracker-buttons { display: flex; justify-content: center; gap: 12px; }
+.round { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-size: 13px; }
+.pause { background: #fff; color: var(--green); }
+.stop { background: #e5484d; color: #fff; }
+
+/* ===== 16. RESPONSIVE (media queries) ===== */
+/* Tablet */
+@media (max-width: 1100px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .grid { grid-template-columns: 1fr 1fr;
+    grid-template-areas: "analytics analytics" "reminders projects" "team team" "progress tracker"; }
+}
+/* Mobile: sidebar goes on top, everything in one column */
+@media (max-width: 700px) {
+  .app { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .promo { display: none; }
+  .user { display: none; }
+  .stats { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr;
+    grid-template-areas: "analytics" "reminders" "projects" "team" "progress" "tracker"; }
+}

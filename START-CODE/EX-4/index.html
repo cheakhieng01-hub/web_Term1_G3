@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard</title>
+  <!-- Connect the CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- ===== A. SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="brand"><span class="logo">◉</span> My Dashboard</div>
+
+      <p class="menu-label">MENU</p>
+      <nav class="nav">
+        <a href="#" class="active">▦ Dashboard</a>
+        <a href="#">✔ Tasks <span class="badge">12+</span></a>
+        <a href="#">▣ Calendar</a>
+        <a href="#">▥ Analytics</a>
+        <a href="#">☺ Team</a>
+      </nav>
+
+      <p class="menu-label">GENERAL</p>
+      <nav class="nav">
+        <a href="#">⚙ Settings</a>
+        <a href="#">? Help</a>
+        <a href="#">⏻ Logout</a>
+      </nav>
+
+      <!-- Promotional card -->
+      <div class="promo">
+        <h3>Download our Mobile App</h3>
+        <p>Get easy in another way</p>
+        <a href="#" class="btn btn-light">Download</a>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN AREA ===== -->
+    <main class="main">
+
+      <!-- B. TOP BAR -->
+      <header class="topbar">
+        <div class="search">🔍 <input type="text" placeholder="Search task"></div>
+        <div class="topbar-right">
+          <span class="icon-circle">✉</span>
+          <span class="icon-circle">🔔</span>
+          <span class="avatar">TM</span>
+          <div class="user">
+            <strong>Lam Chikheang</strong>
+            <small>kmengdueiskheang@mail.com</small>
+          </div>
+        </div>
+      </header>
+
+      <!-- C. HEADER -->
+      <section class="page-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p class="muted">Plan, prioritize, and accomplish your tasks with ease.</p>
+        </div>
+        <div class="header-buttons">
+          <a href="#" class="btn btn-green">+ Add Project</a>
+          <a href="#" class="btn btn-outline">Import Data</a>
+        </div>
+      </section>
+
+      <!-- D. STAT CARDS -->
+      <section class="stats">
+        <div class="card stat featured">
+          <h3>Total Projects</h3><div class="number">24</div>
+          <small>▲ Increased from last month</small>
+        </div>
+        <div class="card stat">
+          <h3>Ended Projects</h3><div class="number">10</div>
+          <small class="green-text">▲ Increased from last month</small>
+        </div>
+        <div class="card stat">
+          <h3>Running Projects</h3><div class="number">12</div>
+          <small class="green-text">▲ Increased from last month</small>
+        </div>
+        <div class="card stat">
+          <h3>Pending Projects</h3><div class="number">2</div>
+          <small class="green-text">On Discuss</small>
+        </div>
+      </section>
+
+      <!-- Middle + bottom grid: each card has its own area in CSS -->
+      <section class="grid">
+
+        <!-- E. ANALYTICS -->
+        <div class="card analytics">
+          <h3>Project Analytics</h3>
+          <div class="chart">
+            <div class="bar-col"><div class="bar b-stripe" style="height:80%"></div><span>S</span></div>
+            <div class="bar-col"><div class="bar b-mid" style="height:90%"></div><span>M</span></div>
+            <div class="bar-col"><div class="bar b-light" style="height:75%"></div><span>T</span></div>
+            <div class="bar-col"><div class="bar b-dark" style="height:100%"></div><span>W</span></div>
+            <div class="bar-col"><div class="bar b-stripe" style="height:95%"></div><span>T</span></div>
+            <div class="bar-col"><div class="bar b-stripe" style="height:70%"></div><span>F</span></div>
+            <div class="bar-col"><div class="bar b-stripe" style="height:85%"></div><span>S</span></div>
+          </div>
+        </div>
+
+        <!-- F. REMINDERS -->
+        <div class="card reminders">
+          <h3>Reminders</h3>
+          <h2>Meeting with Arc Company</h2>
+          <p class="muted">Time : 02.00 pm - 04.00 pm</p>
+          <a href="#" class="btn btn-green btn-block">▶ Start Meeting</a>
+        </div>
+
+        <!-- G. PROJECT LIST -->
+        <div class="card projects">
+          <div class="card-head"><h3>Project</h3><a href="#" class="btn btn-outline btn-small">+ New</a></div>
+          <ul class="project-list">
+            <li><span class="p-icon" style="background:#3b5bdb">✦</span><div>Develop API Endpoints<small>Due date: Nov 26, 2024</small></div></li>
+            <li><span class="p-icon" style="background:#12a594">◔</span><div>Onboarding Flow<small>Due date: Nov 28, 2024</small></div></li>
+            <li><span class="p-icon" style="background:#7bb8e8">✚</span><div>Build Dashboard<small>Due date: Nov 30, 2024</small></div></li>
+            <li><span class="p-icon" style="background:#f5a623">◐</span><div>Optimize Page Load<small>Due date: Dec 5, 2024</small></div></li>
+            <li><span class="p-icon" style="background:#7b4fb8">●</span><div>Cross-Browser Testing<small>Due date: Dec 6, 2024</small></div></li>
+          </ul>
+        </div>
+
+        <!-- H. TEAM -->
+        <div class="card team">
+          <div class="card-head"><h3>Team Collaboration</h3><a href="#" class="btn btn-outline btn-small">+ Add Member</a></div>
+          <ul class="team-list">
+            <li><span class="avatar" style="background:#f4b6b6">AD</span><div>Terampto Ken<small>Working on Github Project Repository</small></div><span class="status done">Completed</span></li>
+            <li><span class="avatar" style="background:#bfe8a8">EA</span><div>Vireak Jame<small>Working on Integrate User Authentication System</small></div><span class="status progress">In Progress</span></li>
+            <li><span class="avatar" style="background:#b8b8f0">IO</span><div>Phin Sophanea<small>Working on Develop Search and Filter Functionality</small></div><span class="status pending">Pending</span></li>
+            <li><span class="avatar" style="background:#f5d9a0">DO</span><div>SL te B ken<small>Working on Responsive Layout for Homepage</small></div><span class="status progress">In Progress</span></li>
+          </ul>
+        </div>
+
+        <!-- I. PROGRESS -->
+        <div class="card progress-card">
+          <h3>Project Progress</h3>
+          <div class="gauge">
+            <div class="gauge-fill"></div>
+            <div class="gauge-hole"><strong>41%</strong><small>Project Ended</small></div>
+          </div>
+          <div class="legend">
+            <span><i class="dot d-done"></i>Completed</span>
+            <span><i class="dot d-progress"></i>In Progress</span>
+            <span><i class="dot d-pending"></i>Pending</span>
+          </div>
+        </div>
+
+        <!-- J. TIME TRACKER -->
+        <div class="card tracker">
+          <h3>Time Tracker</h3>
+          <div class="time">01:24:08</div>
+          <div class="tracker-buttons">
+            <span class="round pause">❚❚</span>
+            <span class="round stop">■</span>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+</body>
+</html>
